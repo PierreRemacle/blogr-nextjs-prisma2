@@ -36,7 +36,7 @@ export default function FirstPost() {
         </div>
         <div className={styles.body}>
             <div className={styles.container}>
-                <h1> Salut Vassilis </h1>
+                <h1> Rework </h1>
                 <h2>  Soutien scolaire pour les élèves du secondaire supérieur </h2>
             </div>
             <div className={styles.block}>
