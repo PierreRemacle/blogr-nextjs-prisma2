@@ -2,7 +2,7 @@ import prisma from '../../lib/prisma';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const formData = req.body[0];
+    const formData = req.body;
     
 
     const student = await prisma.students.create({

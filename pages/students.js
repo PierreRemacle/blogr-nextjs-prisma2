@@ -27,7 +27,6 @@ const delData = async (values) => {
 const createData = async () => {
   
   const newElement = 
-    [
       {
         firstname: "NEW ELEMENT",
         lastname: " ",
@@ -36,8 +35,7 @@ const createData = async () => {
         phone: " ",
         email: " ",
         text: " ",
-      },
-    ];
+      };
   await axios.post("/api/api_students", newElement);
   const updatedData = await axios.get("/api/api_students");
 
