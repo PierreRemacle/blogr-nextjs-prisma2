@@ -143,6 +143,9 @@
 .fltable th:nth-last-child(6){
   width: 120px;
 }
+.fltable th:nth-last-child(7){
+  width: 120px;
+}
 
 
 .fltable td {
@@ -657,5 +660,14 @@
   z-index: 4;
   
 }
+.delButton:hover{
+  background-color: rgb(86, 1, 1);
+}
+.delButton{
 
+  background-color: red;
+  padding: 0%;
+  border: rgb(86, 1, 1);
+
+}
 

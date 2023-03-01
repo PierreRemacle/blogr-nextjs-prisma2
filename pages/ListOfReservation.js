@@ -6,6 +6,7 @@ import {useEffect} from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import styles from '../components/layout.module.css';
+import withAuth from './api/withAuth';
 
 
 const FilteringTable = () => {
@@ -22,6 +23,15 @@ const FilteringTable = () => {
     values.paid = values.paid == false
     
     await axios.put('/api/api_course', values);
+    const updatedData = await axios.get('/api/api_course');
+
+    setData(updatedData.data.data)
+
+  };
+  const DeleteRow = async (values) => {
+    console.log(values)
+    
+    await axios.delete('/api/api_course', { data: values });
     const updatedData = await axios.get('/api/api_course');
 
     setData(updatedData.data.data)
@@ -87,6 +97,7 @@ const FilteringTable = () => {
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
+              <th></th>
               {headerGroup.headers.map(column => (
                 <th {...column.getHeaderProps()}>
                   {column.render('Header')}
@@ -105,7 +116,15 @@ const FilteringTable = () => {
             prepareRow(row);
 
             return (
+              
               <tr {...row.getRowProps()}>
+                                <td>
+                  <button className={styles.delButton} onClick={() => {                   
+                    DeleteRow(row.original);
+                    
+                    }}>Delete
+                    </button>
+                </td>
                 {row.cells.map(cell => {
                   return (
                     <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
@@ -119,6 +138,7 @@ const FilteringTable = () => {
                   onChange={() => togglePaid(row.original)} 
                   />
                 </td>
+
               </tr>
               
 
@@ -133,4 +153,4 @@ const FilteringTable = () => {
   );
 };
 
-export default FilteringTable;
+export default withAuth(FilteringTable);
