@@ -25,7 +25,7 @@ export default function FirstPost() {
         <>
         <div className={styles.header}>
             <nav className={styles.topnav}>
-                <Link href="" className={styles.selected}>Home</Link>
+                <Link href="" className="active">Home</Link>
                 <Link href="reservation">Reservation</Link>
                 <AuthenticatedComponent>
                 <Link href="transition">Transition</Link>

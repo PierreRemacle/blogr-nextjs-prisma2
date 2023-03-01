@@ -1,7 +1,7 @@
 .container {
   display: flex;
   height: 50vh;
-  margin-top: 4vh;
+  
   
   background-image: url('../public/images/background1.png');
   justify-content: center;
@@ -106,7 +106,6 @@
 
 .fltable {
   display:table;
-  margin-top: 4vh;
   position: fixed;
   border-radius: 5px;
   font-size: 12px;
@@ -435,31 +434,34 @@
   justify-self: flex-end;
 }
 
-.topnav{
-  z-index: 2;
+.topnav {
+  background-color: #000000;
+  overflow: hidden;
   height: 4vh;
-  position: fixed;
-}
-.topnav .selected {
-  background-color: white;
-  color: #000000;
 }
 
+/* Style the links inside the navigation bar */
 .topnav a {
-  /* Stay on top */
-  color: #ffffff;
-  text-decoration: none;
+  float: left;
+  color: #f2f2f2;
   text-align: center;
-  display: block;
-  font-size: 1.5vh;
-  padding: 1vh;
-  background-color: black;
-  
+  padding: 0.5vh 12px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
+/* Change the color of links on hover */
 .topnav a:hover {
-  background-color: blue;
+  background-color: #ddd;
+  color: black;
 }
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
 
 
 
