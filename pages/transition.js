@@ -1,86 +1,70 @@
 import React, { useState, useMemo } from 'react';
 import {useEffect} from 'react';
+import { useRouter } from 'next/router';
 import axios from 'axios';
 import Link from 'next/link';
 import styles from '../components/layout.module.css';
-import { useRouter } from 'next/router';
-import withAuth from './api/withAuth';
 
 
-const fetchData = () => axios.get('/api/api_students').then(response => response.data.data);
-
+const fetchData = async () => {
+  const response = await axios.get('/api/form');
+  return response.data.data;
+};
 
 const updateData = async (values) => {
-  await axios.put('/api/api_students', values);
-  const updatedData = await axios.get('/api/api_students');
+  await axios.put('/api/form', values);
+  const updatedData = await axios.get('/api/form');
 
   return updatedData.data.data;
 };
 const delData = async (values) => {
-
-    await axios.delete("/api/api_students", { data: values });
-  const updatedData = await axios.get('/api/api_students');
-
+    console.log("del")
+    console.log(values)
+    await axios.delete("/api/form", { data: values });
+  const updatedData = await axios.get('/api/form');
+  console.log("updatedData")
+  console.log(updatedData)
 
   return updatedData.data.data;
 };
 const createData = async () => {
+    const newElement = 
+        {
+          firstname: "NEW ELEMENT",
+          lastname: "",
+          subject: "",
+          year: "",
+          phone: "",
+          email: "",
+          text: "",
+        };
+    await axios.post("/api/form", newElement);
+    const updatedData = await axios.get("/api/form");
   
-  const newElement = 
-    [
-      {
-        firstname: "NEW ELEMENT",
-        lastname: " ",
-        subject: " ",
-        year: " ",
-        phone: " ",
-        email: " ",
-        text: " ",
-      },
-    ];
-  await axios.post("/api/api_students", newElement);
-  const updatedData = await axios.get("/api/api_students");
+    return updatedData.data.data;
+  };
 
-  return updatedData.data.data;
-};
-const createNewcourse = async (values , coursevalues) => {
+  const createNewStudent = async (values) => {
 
-  await axios.post("/api/api_course", {...values, ...coursevalues});
-  
-};
+    await axios.post("/api/api_students", values);
+    
+  };
 
 const Home = () => {
-  const router = useRouter();
-  const newitemid = router.query;
   const [data, setData] = useState([]);
-  const [newcourseelement, setNewCourseElement] = useState({
-    newsubject: "",
-    newdate: ""
-  });
-  
   const [selectedItem, setSelectedItem] = useState(null);
-  
+  const router = useRouter();
 
   useEffect(() => {
     const fetch = async () => {
       const fetchedData = await fetchData();
       setData(fetchedData);
-  
-      if (newitemid.newstudent != null) {
-        const selected = fetchedData.find(item => item.id === newitemid.newstudent);
-        setSelectedItem(selected);
-      }
-      else if (fetchedData.length > 0){
-        setSelectedItem(fetchedData[0]);
-    }
+      setSelectedItem(fetchedData[0]);
     };
     fetch();
   }, []);
-  
-  
+
   const handleClick = (item) => {
-    newcourseelement.newsubject=""
-    newcourseelement.newdate=""
     setSelectedItem(item);
   };
 
@@ -88,10 +72,6 @@ const Home = () => {
 
     const updatedData = await updateData(values);
     setData(updatedData);
-    setNewCourseElement({
-      newsubject: "",
-      newdate: ""
-    });
   };
   const NewItem = async (values) => {
 
@@ -109,17 +89,19 @@ const Home = () => {
     else{
         setSelectedItem(null)
     }
-  };
-  const Newcourse = async (values , newvalues) => {
-
-    await createNewcourse(values, newvalues);
-    setNewCourseElement({
-      newsubject: "",
-      newdate: ""
-    });
     
   };
-  
+  const NewStudent = async (values) => {
+
+    await createNewStudent(values);
+    await delData(values);
+    router.push({
+      pathname: 'students',
+      query: {
+        newstudent: values.id,
+      },
+    });
+  };
     return (
         
         <div>
@@ -128,8 +110,8 @@ const Home = () => {
             
                     <Link href="/">Home</Link>
                     <Link href="reservation">Reservation</Link>
-                    <Link href="transition">Transition</Link>
-                    <Link href="students" className={styles.selected}>Students</Link>
+                    <Link href="transition" className={styles.selected}>Transition</Link>
+                    <Link href="students">Students</Link>
                     <Link href="ListOfReservation">Table</Link>
             
                 </nav>
@@ -160,8 +142,8 @@ const Home = () => {
                                     <input type="text" value={selectedItem.year} onChange={(e) => setSelectedItem({...selectedItem, year: e.target.value})} />
                                 </div>
                                 <div className = {styles.setcolumn}>
-                                    <label>Text:</label>
-                                    <textarea className = {styles.biginput} type="text" value={selectedItem.text} onChange={(e) => setSelectedItem({...selectedItem, text: e.target.value})} />
+                                    <label>Subject:</label>
+                                    <textarea className = {styles.biginput} type="text" value={selectedItem.subject} onChange={(e) => setSelectedItem({...selectedItem, subject: e.target.value})} />
                                 </div >
                             </div>
                             <div className = {styles.setrow}>
@@ -176,17 +158,8 @@ const Home = () => {
                                     <input type="text" value={selectedItem.email} onChange={(e) => setSelectedItem({...selectedItem, email: e.target.value})} />
                                     </div>
                                     <div className = {styles.setcolumn}>
-                                    <h3>Newcourse:</h3>
-                                    <label>subject:</label>
-                                    <input className = {styles.biginput} type="text" value={newcourseelement.newsubject} onChange={(e) => setNewCourseElement({...newcourseelement, newsubject: e.target.value})}   />
-                                    <label>date:</label>
-                                    <input className = {styles.biginput} type="date" value={newcourseelement.newdate} onChange={(e) => setNewCourseElement({...newcourseelement, newdate: e.target.value})}  />
-                                    <br></br>
-                                    <button onClick={() => {
-                                      Newcourse(selectedItem ,newcourseelement );
-                                      
-                                      }}>Submit
-                                    </button>
+                                    <label>Text:</label>
+                                    <textarea className = {styles.biginput} type="text" value={selectedItem.text} onChange={(e) => setSelectedItem({...selectedItem, text: e.target.value})} />
                                 </div>
                             </div>
                            
@@ -201,7 +174,11 @@ const Home = () => {
                                     
                                     }}>Edit
                                 </button>
-                                
+                                <button onClick={() => {
+                                    NewStudent(selectedItem);
+                                    
+                                    }}>Submit
+                                </button>
                             </div>
 
                         </div>
@@ -214,4 +191,4 @@ const Home = () => {
         </div>
     )
 }
-export default withAuth(Home);
+export default (Home);

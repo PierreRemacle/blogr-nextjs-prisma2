@@ -8,7 +8,7 @@ const withAuth = (WrappedComponent) => {
         // If the request is not from the server, check if the user is logged in
         const token = localStorage.getItem('token');
         if (!token) {
-          Router.push('/posts/login');
+          Router.push('/login');
         }
       }
       // If the request is from the server, check if the user is logged in using the session
@@ -25,7 +25,7 @@ const withAuth = (WrappedComponent) => {
     componentDidMount() {
       const token = localStorage.getItem('token');
       if (!token) {
-        Router.push('/posts/login');
+        Router.push('/login');
       }
     }
   
