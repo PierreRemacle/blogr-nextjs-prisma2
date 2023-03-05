@@ -55,7 +55,7 @@ export default function Home() {
 
       </nav>
       <div className={styles.myfrombox}>
-        <div className={`${styles.Myform} ${isAnimated ? styles.borderanimation : ""}`}>
+        <div className={styles.Myform}>
           <form
             onSubmit={handleSubmit(onSubmitForm)}
             className="grid grid-cols-1 gap-y-6">

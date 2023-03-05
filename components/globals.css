@@ -66,6 +66,10 @@ h2{
   --group-border-focus: var(--input-border-focus);
   --group-background-focus: #678EFE;
 
+  /* colors */
+
+  -blue1: rgb(72, 150, 232)
+
 }
 input {
   display: block;

@@ -289,31 +289,9 @@
 }
 
 /* Form Styles */
-.myfrombox{
-  display: flex;
-  padding-top:6vh;
-  padding-bottom:1vh;
-  justify-content: center;
 
-}
 
-.borderanimation {
-  animation: border-animation 1s ease-in-out;
-}
 
-@keyframes border-animation {
-  0% {
-
-    background-color: #50759b;
-  }
-  100% {
-
-    background-color: #324960;
-  }
-}
-.coloranimation {
-  animation: color-animation 1s ease-in-out;
-}
 
 @keyframes color-animation {
   0% {
@@ -324,59 +302,66 @@
   }
 }
 
-.Myform{
-  width: min(600px,100%);
+.myfrombox {
   display: flex;
-  align-items: center;
-  align-self: center;
-  text-align: center;
   justify-content: center;
-  border-radius: 25px;
-  padding: 2%;
-  background-color: #324960;
-  color: rgb(0, 0, 0);
+  margin-top: 50px;
+}
+
+.Myform {
+  width: 70%;
   padding: 20px;
-  
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
 
-  
+.Myform label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
-.Myform div{
-  display: flex;
-  width: min(600px,100%);
-  justify-content: center;
-  flex-direction: column;
-  padding-top: 1vh;
-}
-.myfrom label{
-  padding: 500px;
-}
-.Myform input {
-  width: 100%;
-  text-align: center;
-  height: 30px;
-  
-}
-.Myform select {
 
-  height: 30px;
-  
-}
-.Myform select[multiple] {
-
-  height: 100px;
-  
+.Myform input[type="text"],
+.Myform input[type="email"],
+.Myform input[type="tel"],
+.Myform select{
+  height: fit-content;
 }
 .Myform textarea {
-
-  height: 100px;
-  
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #e4e4e4;
+  border-radius: 5px;
+  font-size: 16px;
 }
-.Myform p {
 
+.Myform textarea {
+  resize: none;
+  height: 150px;
+}
+
+.Myform button[type="submit"] {
+  background-color: #0095f6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Myform button[type="submit"]:hover {
+  background-color: #0081d4;
+}
+
+.Myform p {
   color: red;
-  text-align: left;
-  font-size: 80%;
-  
+  font-size: 14px;
+  margin-top: 5px;
 }
 /* The sidebar menu */
 .sidenav {
@@ -435,7 +420,7 @@
 }
 
 .topnav {
-  background-color: #000000;
+  background-color: rgb(16, 120, 231);
   overflow: hidden;
   height: 4vh;
 }

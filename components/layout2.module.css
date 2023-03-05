@@ -1,0 +1,283 @@
+.topnav {
+    position:sticky;
+    background-color: rgb(16, 120, 231);
+    overflow: hidden;
+    height: 4vh;
+    min-height:30px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+
+}
+  
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.5vh 12px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.one {
+    display: flex;
+    background-image: url('../public/images/Illustration_sans_titre_1.png');
+
+    background-position-x: right;
+    background-position-y: top;
+    background-size: min(70vw , 800px);
+
+    background-repeat: no-repeat;
+    justify-content: right;
+    margin-top: max(-14vw,-100px);
+    
+}
+.two {
+    display: flex;
+    background-size: 100vw;
+    width: 100vw;
+    justify-content: center;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-color: transparent;
+}
+
+.tree {
+    display: flex;
+    background-image: url('../public/images/Illustration_sans_titre.png');
+    background-position-x: right;
+    background-position-y: top;
+    background-repeat: no-repeat;
+
+    background-size: 100vw , 100vw;
+    margin-top: max(-14vw,-100px);
+    object-fit: fill;
+    width: 100vw;
+    height: 100vw;
+    flex-direction: column;
+}
+
+
+.four{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(16, 120, 231);
+    color: #ddd;
+    
+}
+.four ul{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    padding: 0 3vw ;
+    justify-content: space-around;
+
+}
+.four p {
+    display: flex;
+    padding: 1vw 2vw ;
+    color: #ddd;
+
+}
+.four a{
+    color: #ddd;
+}
+
+.bench{
+    background-image: url('../public/images/Illustration_sans_titre_2.png');
+    background-position-x: right;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    top: 50vw;
+    display: flex;
+    justify-self: right;
+    justify-content: left;
+    background-size: min(70vw , 800px);
+    height: min(80vw,950px);
+    width: 100vw;
+    max-width: 800px;
+    max-height: 1152px;
+    margin-top: 0vw;
+    
+}
+
+.logo{
+    display: flex;
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    margin-top: min(14vw,160px);
+    margin-left: min(10vw,130px);
+
+    max-width: 450px;
+    max-height: 450px;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    
+
+    
+    
+}
+.logo h2{
+    font-size: 1.5vw;
+    background-color: transparent;
+    width: 70vw;
+    align-self: center;
+
+
+}
+
+
+.one a{
+    display: flex;
+}
+
+.two h2{
+    display: flex;
+    background-color: transparent;
+    justify-self: center;
+    justify-content: center;
+    margin-left: 5vw;
+    font-size: 2.5vw;
+    margin-top: 3vw;
+    width: 70vw;
+}
+.two h1{
+    background-color: transparent;
+    margin-left: 5vw;
+}
+
+.tree h1{
+    background-color: transparent;
+    margin-left: 5vw;
+    margin-top: 20vw;
+    font-size: 6vw;
+    color: #ddd;
+}
+.tree h2{
+    margin-left: 5vw;
+    background-color: transparent;
+    font-size: 2.5vw;
+    width: 85vw;
+    align-self: center;
+    color: #ddd;
+    padding: 1vw;
+    justify-self: center;
+
+}
+.lables {
+    display: none;
+    font-size: 2vw;
+}
+.lables1 {
+    display: none;
+    
+}
+.lables2 {
+
+    font-size: 30px;
+}
+
+@media only screen and (min-width: 450px) {
+    .lables1 {
+        display: inline-block;
+        font-size: 3vw;
+    }
+    .lables2 {
+
+        font-size: 3vw;
+    }
+
+}
+@media only screen and (min-width: 930px) {
+
+    .lables1 {
+        display: inline-block;
+        font-size: 2vw;
+    }
+    .lables2 {
+
+        font-size: 2vw;
+    }
+    .lables{
+        display: inline-block;
+    }
+}
+
+
+
+
+
+.block {
+    padding: 20px;
+}
+
+.block h3 {
+    font-size: 3vw;
+    margin-bottom: 20px;
+}
+
+.paragraphe {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.pright p {
+    font-size: 3vw;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.block ul {
+    margin-bottom: 10px;
+    font-size: 3vw;
+    line-height: 1.5;
+    list-style: none;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vw;
+    margin-bottom: 5vw;
+  }
+  
+.button {
+    display: inline-block;
+    background-color: rgb(16, 120, 231);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 6vw;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: rgb(13, 86, 165);
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:active {
+    background-color: #2980B9;
+}
