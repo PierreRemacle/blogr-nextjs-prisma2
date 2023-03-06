@@ -60,8 +60,8 @@ export default function FirstPost() {
                         <ul> <FontAwesomeIcon icon={faChalkboardTeacher}/> Comment? les cours sont donné par groupe de 4 </ul>
                         <ul> <FontAwesomeIcon icon={faMoneyBill}/> Tarif? 35€/3h </ul>
                         <br></br>
-                        <div class={styles.buttonContainer}>
-                            <a class={styles.button} href="reservation">Prenez contact avec nous</a>
+                        <div className={styles.buttonContainer}>
+                            <a className={styles.button} href="reservation">Prenez contact avec nous</a>
                         </div>
                         <br></br>
                     </div>

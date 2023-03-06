@@ -15,6 +15,8 @@ export default function Home() {
  
   const {register,formState: { errors },handleSubmit , reset} = useForm({criteriaMode: "all"});
   const [isAnimated, setIsAnimated] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
   async function onSubmitForm(values) {
     let config = {
       method: 'post',
@@ -31,6 +33,7 @@ export default function Home() {
       if (response.status == 200) {
         console.log("set")
         reset();
+        setShowPopup(true);
         setIsAnimated(true);
         setTimeout(() => {
           setIsAnimated(false);
@@ -54,6 +57,11 @@ export default function Home() {
         </AuthenticatedComponent>
 
       </nav>
+      {showPopup && (
+        <div className={styles.popup}>
+          <button onClick={() => setShowPopup(false)}>Your form has been submitted successfully!</button>
+        </div>
+      )}
       <div className={styles.myfrombox}>
         <div className={styles.Myform}>
           <form
