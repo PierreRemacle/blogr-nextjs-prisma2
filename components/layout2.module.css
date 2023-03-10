@@ -384,19 +384,19 @@
     }
     .two h1{
         background-color: transparent;
-    
+        
     }
     
     .tree h1{
         background-color: transparent;
-   
-        font-size: 6vw;
+        
+        
         color: #ddd;
     }
     .tree h2{
     
         background-color: transparent;
-        font-size: 2.5vw;
+        font-size: 3vw;
         width: 85vw;
         align-self: center;
         color: #ddd;
