@@ -63,8 +63,9 @@ export default function FirstPost() {
                         <ul> <FontAwesomeIcon icon={faMoneyBill}/> Tarif? 35€/3h </ul>
                         <br></br>
                         <div className={styles.buttonContainer}>
-                            <a className={styles.button} href="reservation">Prenez contact avec nous</a>
+                            <a className={styles.button} href="reservation">Reservation</a>
                         </div>
+                        <p> Laisser nous vos information nous vous reconterons.</p>
                         <br></br>
                     </div>
                 </div>

@@ -59,7 +59,7 @@ export default function Home() {
       </nav>
       {showPopup && (
         <div className={styles.popup}>
-          <button onClick={() => setShowPopup(false)}>Your form has been submitted successfully!</button>
+          <button onClick={() => setShowPopup(false)}>Le formulaire a été envoyé correctement. </button>
         </div>
       )}
       <div className={styles.myfrombox}>
@@ -74,7 +74,7 @@ export default function Home() {
               <input
                 name="lastname"
                 {... register("lastname" ,{
-                  required: "This input is required.", 
+                  required: "Le nom est obligatoire", 
                 })}
               />
               <ErrorMessage
@@ -98,7 +98,7 @@ export default function Home() {
               <input
                 name="firstname"
                 {... register("firstname" ,{
-                  required: "This input is required.", 
+                  required: "Le prénom est obligatoire", 
                 })}
               />
               <ErrorMessage
@@ -144,10 +144,10 @@ export default function Home() {
               <input
                 name="email"
                 {... register("email" ,{
-                  required: "This input is required.",
+                  required: "L'Email est obligatoire",
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message : "not a valid Email" }
+                    message : "Adresse Email invalide" }
                   })}
               />
               <ErrorMessage
@@ -170,10 +170,10 @@ export default function Home() {
               </label>
               <input
                 {... register("phone" ,{
-                  required: "This input is required.",
+                  required: "Le numéro de téléphone est obligatoire",
                   pattern: {
                     value : /^(((\+|00)32[ ]?(?:\(0\)[ ]?)?)|0){1}(4(60|[789]\d)\/?(\s?\d{2}\.?){2}(\s?\d{2})|(\d\/?\s?\d{3}|\d{2}\/?\s?\d{2})(\.?\s?\d{2}){2})$/i,
-                    message : " not a valid phone number"
+                    message : "Numéro de téléphone invalide"
                   }
                   })}
               />
