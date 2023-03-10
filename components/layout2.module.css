@@ -37,7 +37,7 @@
     background-size: min(70vw , 800px);
     background-repeat: no-repeat;
     justify-content: right;
-    margin-top: max(-14vw,-100px);
+    /* margin-top: max(-14vw,-100px); */
     
 }
 .two {
@@ -53,16 +53,15 @@
 .tree {
     display: flex;
     background-image: url('../public/images/Illustration_sans_titre.png');
-    background-position-x: right;
-    background-position-y: top;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: 100vw , 100vw;
-    margin-top: max(-14vw,-100px);
-    object-fit: fill;
+    background-size: cover;
+    margin-top: max(-14vw);
     width: 100vw;
-    height: 100vw;
+    height: 70vw;
     flex-direction: column;
-}
+    justify-content: center;
+  }
 
 
 .four{
@@ -105,29 +104,32 @@
     width: 100vw;
     max-width: 800px;
     max-height: 1152px;
-    margin-top: 0vw;
+
     
 }
 
 .logo{
     display: flex;
     position: absolute;
-    width: 30vw;
-    height: 30vw;
-    margin-top: min(14vw,160px);
-    margin-left: min(10vw,130px);
+    width: 22vw;
+    height: 22vw;
+    margin-left: min(12vw,180px);
     max-width: 450px;
     max-height: 450px;
     justify-content: center;
     flex-direction: column;
     align-content: center;
+    margin-top: min(10vw,100px);
     
 }
 .logo h2{
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     background-color: transparent;
-    width: 70vw;
+    letter-spacing: 0.4vw;
+    width: 37vw;
     align-self: center;
+    font-weight: normal;
+
 
 
 }
@@ -142,104 +144,85 @@
     background-color: transparent;
     justify-self: center;
     justify-content: center;
-
-    font-size: 2.5vw;
-    margin-top: 3vw;
-    width: 70vw;
+    font-weight: normal;
+    font-size: 1.4vw;
+    margin-top: 6vw;
+    width: 40vw;
+    margin-bottom: 7vw;
 }
 .two h1{
     background-color: transparent;
+    
 
 }
 
 .tree h1{
     background-color: transparent;
-    margin-top: 20vw;
-    font-size: 6vw;
+
+    font-size: 4vw;
     color: #ddd;
+    font-weight: normal;
+    
 }
 .tree h2{
 
     background-color: transparent;
-    font-size: 2.5vw;
+    font-size: 1.7vw;
     width: 85vw;
     align-self: center;
     color: #ddd;
     padding: 1vw;
     justify-self: center;
+    font-weight: normal;
 
 }
-.lables {
-    display: none;
-    font-size: 2vw;
-}
-.lables1 {
-    display: none;
-    
-}
-.lables2 {
-
-    font-size: 30px;
-}
-
-@media only screen and (min-width: 450px) {
-    .lables1 {
-        display: inline-block;
-        font-size: 3vw;
-    }
-    .lables2 {
-
-        font-size: 3vw;
-    }
-
-}
-@media only screen and (min-width: 930px) {
-
-    .lables1 {
-        display: inline-block;
-        font-size: 2vw;
-    }
-    .lables2 {
-
-        font-size: 2vw;
-    }
-    .lables{
-        display: inline-block;
-    }
-}
-
-
-
-
 
 .block {
-    padding: 20px;
+    padding: 5vw;
 }
 
 .block h3 {
-    font-size: 3vw;
+    font-size: 4vw;
     margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-top: -60px;
+    font-weight: normal;
+
+    
 }
 
 .paragraphe {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
 }
 
+.pright{
+    display: flex;
 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
 
 .pright p {
-    font-size: 3vw;
+
+    font-size: 1.7vw;
     line-height: 1.5;
     margin-bottom: 20px;
+
+
 }
 
-.block ul {
+
+.pright ul {
     margin-bottom: 10px;
-    font-size: 3vw;
+    font-size: 1.7vw;
     line-height: 1.5;
-    list-style: none;
+    align-self: normal;
 }
 
 .buttonContainer {
@@ -256,7 +239,8 @@
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    font-size: 6vw;
+    font-size: 2vw;
+
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -284,13 +268,13 @@
     z-index: 999;
   }
   
-  .popup p {
+.popup p {
     margin: 0;
     font-size: 1.5rem;
     font-weight: bold;
-  }
+}
   
-  .popup button {
+.popup button {
     margin-top: 1rem;
     background-color: #007bff;
     color: white;
@@ -298,8 +282,180 @@
     border-radius: 0.25rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
-  }
+}
   
-  .popup button:hover {
+.popup button:hover {
     background-color: #0069d9;
-  }
+}
+.lables{
+    font-size: 2vw;
+    padding-right: 1vw;
+}
+.lables1 {
+    display: inline-block;
+    font-size: 2vw;
+    
+}
+.lables2 {
+
+    font-size: 2vw;
+    padding-right: 1vw;
+    
+}
+
+@media only screen and (max-width: 450px) {
+    .logo h2{
+        font-size: 2.2vw;
+    }
+    .lables {
+        display: none;
+        font-size: 1.6vw;
+    }
+    .lables1 {
+        display: none;
+        
+    }
+    .lables2 {
+    
+        font-size: 30px;
+    }
+
+
+    .two {
+        display: flex;
+        background-size: 100vw;
+        width: 100vw;
+        justify-content: center;
+        background-repeat: no-repeat;
+        object-fit: contain;
+        background-color: transparent;
+    }
+    
+
+
+    .tree {
+        display: flex;
+        background-image: url('../public/images/Illustration_sans_titre.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: max(-14vw);
+        width: 100vw;
+        height: 100vw;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    
+    .four{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: rgb(16, 120, 231);
+        color: #ddd;
+        
+    }
+    .four ul{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        padding: 0 3vw ;
+        justify-content: space-around;
+    
+    }
+    .four p {
+        display: flex;
+        padding: 1vw 2vw ;
+        color: #ddd;
+    
+    }
+    .four a{
+        color: #ddd;
+    }
+    .two h2{
+        display: flex;
+        background-color: transparent;
+        justify-self: center;
+        justify-content: center;
+    
+        font-size: 2.5vw;
+        margin-top: 3vw;
+        width: 70vw;
+    }
+    .two h1{
+        background-color: transparent;
+    
+    }
+    
+    .tree h1{
+        background-color: transparent;
+   
+        font-size: 6vw;
+        color: #ddd;
+    }
+    .tree h2{
+    
+        background-color: transparent;
+        font-size: 2.5vw;
+        width: 85vw;
+        align-self: center;
+        color: #ddd;
+        padding: 1vw;
+        justify-self: center;
+    }
+
+
+    .block {
+        padding: 20px;
+    }
+
+    .block h3 {
+        font-size: 3vw;
+        margin-bottom: 20px;
+    }
+
+    .paragraphe {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+
+    .pright p {
+        font-size: 3vw;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .block ul {
+        margin-bottom: 10px;
+        font-size: 3vw;
+        line-height: 1.5;
+        list-style: none;
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vw;
+        margin-bottom: 5vw;
+    }
+    
+    .button {
+        display: inline-block;
+        background-color: rgb(16, 120, 231);
+        color: #ffffff;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 6vw;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+        
+        
+
+}
