@@ -65,7 +65,7 @@ export default function FirstPost() {
                         <div className={styles.buttonContainer}>
                             <a className={styles.button} href="reservation">Reservation</a>
                         </div>
-                        <p> Laisser nous vos information nous vous reconterons.</p>
+                        <p> Laissez-nous vos informations, nous vous raconterons.</p>
                         <br></br>
                     </div>
                 </div>
